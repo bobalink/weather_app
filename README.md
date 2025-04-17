@@ -22,3 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+
+Things Completed: 
+
+- Encrypt API key using Rails credentials
+- Make successful call based with hardcoded zip code
+- Displaying Data on main page from hardcoded call
+- 
