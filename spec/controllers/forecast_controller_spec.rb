@@ -2,7 +2,7 @@
 require 'rails_helper'
 # require 'rspec'
 
-describe WeatherController, type: :controller do
+describe ForecastController, type: :controller do
   let(:http_mock) { class_double(Net::HTTP) }
 
   before do

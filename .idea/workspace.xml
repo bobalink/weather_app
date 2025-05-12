@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4620ea7-b5da-4453-91ca-d333a4473f92" name="Changes" comment="Getting call in place based on hardcoded zip code and displaying it on index page">
-      <change afterPath="$PROJECT_DIR$/spec/system/.keep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/application/index.html.erb" beforeDir="false" />
+    <list default="true" id="a4620ea7-b5da-4453-91ca-d333a4473f92" name="Changes" comment="Base functionality in place">
+      <change beforePath="$PROJECT_DIR$/.idea/weather_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/weather_app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/weather_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/forecast_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/weather/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/forecast/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/application_system_test_case.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/application_system_test_case.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/.keep" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/.keep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/files/.keep" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/weather_controller_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/helpers/.keep" beforeDir="false" afterPath="$PROJECT_DIR$/spec/fixtures/files/.keep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/integration/.keep" beforeDir="false" afterPath="$PROJECT_DIR$/spec/helpers/.keep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/mailers/.keep" beforeDir="false" afterPath="$PROJECT_DIR$/spec/integration/.keep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/.keep" beforeDir="false" afterPath="$PROJECT_DIR$/spec/mailers/.keep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/system/.keep" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/.keep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/test_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/controllers/weather_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/forecast_controller_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/requests/weather_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/weather_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/views/weather/index.html.tailwindcss_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/views/weather/index.html.tailwindcss_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +49,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "ruby.structure.view.model.defaults.configured": "true",
+    "settings.editor.selected.configurable": "editor.preferences.smartKeys",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -142,7 +135,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744231133434</updated>
       <workItem from="1744231134472" duration="1400000" />
-      <workItem from="1744297978518" duration="57398000" />
+      <workItem from="1744297978518" duration="59593000" />
     </task>
     <task id="LOCAL-00001" summary="Getting call in place based on hardcoded zip code and displaying it on index page">
       <option name="closed" value="true" />
@@ -152,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744926490905</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Base functionality in place">
+      <option name="closed" value="true" />
+      <created>1747078886609</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747078886609</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +161,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Getting call in place based on hardcoded zip code and displaying it on index page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Getting call in place based on hardcoded zip code and displaying it on index page" />
+    <MESSAGE value="Base functionality in place" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base functionality in place" />
   </component>
 </project>
