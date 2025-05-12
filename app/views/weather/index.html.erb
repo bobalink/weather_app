@@ -1,0 +1,25 @@
+
+<main class="container mx-auto">
+  <div class="font-bold mx-auto w-full text-center">
+
+    <%= form_with(method: 'get', local: true) do %>
+      <%= label(:query, "Enter Zip code") %>
+      <%= text_field_tag(:query, @query || @query_default, size: 70) %> <br>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+
+    <% if !@data.dig('current').nil?%>
+      <p class="text-center"> <%= Date.today.strftime("%A, %B %d") %> </p>
+      <img class="mx-auto" src="<%=@data.dig('current','weather_icons')&.first %>">
+      <p class="text-center"> <%= @data.dig('location','name') %>,  <%= @data.dig('location','region') %> </p>
+
+
+      <p> <%= @data.dig('current', 'temperature') %></p>
+      <p> <%= @data.dig('current', 'weather_descriptions')&.first %></p>
+      <p>Wind direction: <%= @data.dig('current', 'wind_dir')%></p>
+      <p>Wind speed: <%= @data.dig('current','wind_speed') %></p>
+      <p>Feels like: <%= @data.dig('current', 'feelslike') %></p>
+    <% end %>
+  </div>
+</main>

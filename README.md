@@ -31,4 +31,13 @@ Things Completed:
 - Encrypt API key using Rails credentials
 - Make successful call based with hardcoded zip code
 - Displaying Data on main page from hardcoded call
-- 
+- Add params to query
+
+
+
+Things still to do:
+- figure out if I want another method on the controller
+- get meaningful tests in place
+- get input box as index page
+- get caching in place
+- write documentation 
