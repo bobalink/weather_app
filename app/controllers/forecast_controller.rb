@@ -1,23 +1,37 @@
 require 'net/http'
 
+
 class ForecastController < ApplicationController
+
   def index
-    puts params
-
     query = params[:query]
-
 
     puts 'query is'
     puts query
 
+    #TODO: ensure query is only a zip code or expand it to capture zip code from the query
 
-    uri = URI('http://api.weatherstack.com/current')
-    params = { :access_key => Rails.application.credentials.weatherstack.api_key , query: query, units: 'f' }
-    uri.query = URI.encode_www_form(params)
+    # Caching
+    @zip_cache_key = "#{query}" if query
 
-    res = Net::HTTP.get_response(uri)
+    if @zip_cache_key
 
-    puts res.body if res.is_a?(Net::HTTPSuccess)
-    @data = JSON.parse(res.body)
+      puts "@zip_cache_key"
+      puts @zip_cache_key
+      @zip_cache_exist = Rails.cache.exist?(@zip_cache_key)
+
+      puts "@zip_cache_exist",  @zip_cache_exist
+
+      @weather = Rails.cache.fetch(@zip_cache_key, expires_in: 30.minutes) do
+        puts 'calling weather service'
+        WeatherService.new.get_forecast(query)
+      end
+    end
+
+
+    puts "weather.to_json "
+    puts @weather.to_json
+
+
   end
 end
