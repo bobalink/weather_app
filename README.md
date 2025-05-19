@@ -36,8 +36,8 @@ Things Completed:
 
 
 Things still to do:
-- figure out if I want another method on the controller
 - get meaningful tests in place
-- get input box as index page
 - get caching in place
 - write documentation 
+- Ensure it can take address and not just zip code, maybe include auto complete for adresses
+- fix UI
