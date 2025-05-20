@@ -68,9 +68,7 @@ group :test do
   gem "webmock"
 end
 
-
-
-gem "tailwindcss-ruby", "~> 4.1"
-
-gem "tailwindcss-rails", "~> 4.2"
 gem "css-zero", "~> 1.1"
+
+gem "timecop", "~> 0.9.10"
+gem "mainstreet"

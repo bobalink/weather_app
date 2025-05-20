@@ -92,4 +92,8 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+  # had to set this to true to ignore error that were coming from silliness I had to do in order to
+  # mock out the address validation library.
+  RSpec::Mocks.configuration.allow_message_expectations_on_nil = true
 end
