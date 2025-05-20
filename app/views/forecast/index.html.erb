@@ -1,17 +1,21 @@
 
 <main class="container mx-auto">
-  <div class="font-bold mx-auto w-full text-center">
+  <div class="font-bold mx-auto text-center input-group">
 
     <%= form_with(method: 'get', local: true) do %>
-      <%= label(:query, "Enter Zip code") %>
-      <%= text_field_tag(:query, @query || @query_default, size: 70) %> <br>
-      <%= submit_tag("Search") %>
+      <%= text_field_tag(:query, @query, size: 70, placeholder: 'Enter Zip code', class: 'input',  required: true ) %> <br>
+      <%= submit_tag("Search", class:'button--submit') %>
     <% end %>
 
+  </div>
 
+
+  <div class="text-center">
     <% if !@weather.nil? %>
       <p class="text-center"> <%= Date.today.strftime("%A, %B %d") %> </p>
-      <img class="mx-auto" src="<%=@weather.weather_icons.first %>">
+      <div class="image">
+        <img src="<%=@weather.weather_icons.first %>">
+      </div>
       <p class="text-center"> <%= @weather.location_name %>,  <%= @weather.region %> </p>
 
 

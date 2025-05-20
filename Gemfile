@@ -53,17 +53,19 @@ group :development, :test do
 end
 
 group :development do
-  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
       # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
 
 group :test do
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
       # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "webmock"
 end
 
 
@@ -71,3 +73,4 @@ end
 gem "tailwindcss-ruby", "~> 4.1"
 
 gem "tailwindcss-rails", "~> 4.2"
+gem "css-zero", "~> 1.1"

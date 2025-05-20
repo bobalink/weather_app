@@ -4,22 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4620ea7-b5da-4453-91ca-d333a4473f92" name="Changes" comment="Renaming to forecast vs weather as that's a better descriptor for the data being returned">
-      <change afterPath="$PROJECT_DIR$/app/models/forecast.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/weather_service.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/weather_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/weather_app.iml" afterDir="false" />
+    <list default="true" id="a4620ea7-b5da-4453-91ca-d333a4473f92" name="Changes" comment="Updating front and starting on tests">
+      <change afterPath="$PROJECT_DIR$/spec/models/forecast_spec.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/services/forecast_service_spec.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/forecast_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/forecast_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/weather_helper.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/forecast.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/forecast.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/weather_service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/forecast_service.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/forecast/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/forecast/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/credentials.yml.enc" beforeDir="false" afterPath="$PROJECT_DIR$/config/credentials.yml.enc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/controllers/forecast_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/forecast_controller_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/rails_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/rails_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/requests/weather_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/weather_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/helpers/weather_helper_spec.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/requests/weather_spec.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/views/weather/index.html.tailwindcss_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/views/forecast/index.html.tailwindcss_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,9 +61,11 @@
     "Rake.spec: weather_app.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Test::Unit/Shoulda/Minitest.ForecastController::Forcast Controller.executor": "Run",
+    "Test::Unit/Shoulda/Minitest.calls the weatherstack api in ForecastService::get_forecast.executor": "Run",
     "Test::Unit/Shoulda/Minitest.should call the weather service in ForecastController::Forcast Controller.executor": "Run",
     "Test::Unit/Shoulda/Minitest.should use the params passed in for the weather service in ForecastController::Forcast Controller.executor": "Run",
     "git-widget-placeholder": "main",
+    "last_directory_selection": "/Users/waverly/coding/ruby/weather_app/spec",
     "last_opened_file_path": "/Users/waverly/coding/ruby/weather_app",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -80,7 +84,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="RSpec.Please work">
+  <component name="RunManager" selected="RSpec.Test">
     <configuration name="Please work" type="RSpecRunConfigurationType" factoryName="RSpec">
       <module name="weather_app" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
@@ -195,6 +199,37 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
       <method v="2" />
     </configuration>
+    <configuration name="calls the weatherstack api in ForecastService::get_forecast" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+      <module name="weather_app" />
+      <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/services/forecast_service_spec.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPTS_PATHS" VALUE="$MODULE_DIR$/spec/services/forecast_service_spec.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="^ForecastService::get_forecast#test_\d+_calls the weatherstack api$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method v="2" />
+    </configuration>
     <configuration name="should call the weather service in ForecastController::Forcast Controller" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
       <module name="weather_app" />
       <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
@@ -231,7 +266,13 @@
       <item itemvalue="Rake.spec: weather_app" />
       <item itemvalue="RSpec.Please work" />
       <item itemvalue="RSpec.Test" />
+      <item itemvalue="Test::Unit/Shoulda/Minitest.calls the weatherstack api in ForecastService::get_forecast" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Test::Unit/Shoulda/Minitest.calls the weatherstack api in ForecastService::get_forecast" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -254,7 +295,7 @@
       <workItem from="1747430421483" duration="2822000" />
       <workItem from="1747434196032" duration="8570000" />
       <workItem from="1747678149910" duration="1089000" />
-      <workItem from="1747679257168" duration="3196000" />
+      <workItem from="1747679257168" duration="18382000" />
     </task>
     <task id="LOCAL-00001" summary="Getting call in place based on hardcoded zip code and displaying it on index page">
       <option name="closed" value="true" />
@@ -280,7 +321,39 @@
       <option name="project" value="LOCAL" />
       <updated>1747082143990</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="getting forecast model in place">
+      <option name="closed" value="true" />
+      <created>1747682527859</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747682527859</updated>
+    </task>
+    <task id="LOCAL-00005" summary="abstracting weather service">
+      <option name="closed" value="true" />
+      <created>1747682551280</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747682551280</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Forecast controller using weather service now">
+      <option name="closed" value="true" />
+      <created>1747682593133</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747682593133</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Updating front and starting on tests">
+      <option name="closed" value="true" />
+      <created>1747682611636</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747682611636</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,14 +363,41 @@
     <MESSAGE value="Getting call in place based on hardcoded zip code and displaying it on index page" />
     <MESSAGE value="Base functionality in place" />
     <MESSAGE value="Renaming to forecast vs weather as that's a better descriptor for the data being returned" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renaming to forecast vs weather as that's a better descriptor for the data being returned" />
+    <MESSAGE value="getting forecast model in place" />
+    <MESSAGE value="abstracting weather service" />
+    <MESSAGE value="Forecast controller using weather service now" />
+    <MESSAGE value="Updating front and starting on tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating front and starting on tests" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/models/forecast.rb</url>
+          <line>14</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/models/forecast.rb</url>
+          <line>21</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/weather_app@spec__weather_app.rcov" NAME="spec: weather_app Coverage Results" MODIFIED="1747678977011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="weather_app" />
     <SUITE FILE_PATH="coverage/weather_app@ForecastController__Forcast_Controller.rcov" NAME="ForecastController::Forcast Controller Coverage Results" MODIFIED="1747679671536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="weather_app" />
     <SUITE FILE_PATH="coverage/weather_app@should_use_the_params_passed_in_for_the_weather_service_in_ForecastController__Forcast_Controller.rcov" NAME="should use the params passed in for the weather service in ForecastController::Forcast Controller Coverage Results" MODIFIED="1747679743636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="weather_app" />
-    <SUITE FILE_PATH="coverage/weather_app@Please_work.rcov" NAME="Please work Coverage Results" MODIFIED="1747681607703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" MODULE_NAME="weather_app" />
+    <SUITE FILE_PATH="coverage/weather_app@Please_work.rcov" NAME="Please work Coverage Results" MODIFIED="1747685034045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" MODULE_NAME="weather_app" />
     <SUITE FILE_PATH="coverage/weather_app@should_call_the_weather_service_in_ForecastController__Forcast_Controller.rcov" NAME="should call the weather service in ForecastController::Forcast Controller Coverage Results" MODIFIED="1747680168755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="weather_app" />
-    <SUITE FILE_PATH="coverage/weather_app@Test.rcov" NAME="Test Coverage Results" MODIFIED="1747679426448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" MODULE_NAME="weather_app" />
+    <SUITE FILE_PATH="coverage/weather_app@calls_the_weatherstack_api_in_ForecastService__get_forecast.rcov" NAME="calls the weatherstack api in ForecastService::get_forecast Coverage Results" MODIFIED="1747687109634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="weather_app" />
+    <SUITE FILE_PATH="coverage/weather_app@Test.rcov" NAME="Test Coverage Results" MODIFIED="1747695973976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" MODULE_NAME="weather_app" />
   </component>
 </project>

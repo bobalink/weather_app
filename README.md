@@ -27,17 +27,23 @@ Things you may want to cover:
 
 
 Things Completed: 
-
 - Encrypt API key using Rails credentials
-- Make successful call based with hardcoded zip code
-- Displaying Data on main page from hardcoded call
 - Add params to query
+- Cache based on query
+- 
 
 
 
 Things still to do:
-- get meaningful tests in place
-- get caching in place
-- write documentation 
-- Ensure it can take address and not just zip code, maybe include auto complete for adresses
-- fix UI
+- write documentation
+  - Update Service to do parsing of object
+  - How to update credentials and where they come from
+  - Potentially design patters
+  - Design Decisions
+    - Returning null values for specific fields when they don't exist
+    - 
+  - Things I would work on next
+    - Address autofill for the FE
+    - Object factories for test
+- Work on stripping zip from input to cache based on that
+
