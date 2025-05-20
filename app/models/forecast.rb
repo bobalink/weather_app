@@ -12,15 +12,8 @@ class Forecast
                 :wind_speed
 
   def initialize(attributes)
-    current_weather = attributes['current']
-
-    @current_temperature = current_weather["temperature"]
-    @weather_description = current_weather["weather_descriptions"]&.first
-    @feelslike = current_weather["feelslike"]
-    @weather_icons = current_weather["weather_icons"]
-    @location_name = attributes.dig("location","name")
-    @region = attributes.dig("location","region")
-    @wind_speed = current_weather['wind_speed']
-    @wind_dir = current_weather['wind_dir']
+    attributes.each do |k,v|
+      instance_variable_set("@#{k}",v) unless v.nil?
+    end
   end
 end

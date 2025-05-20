@@ -6,14 +6,29 @@ class ForecastService
     uri.query = URI.encode_www_form(params)
 
     res = Net::HTTP.get_response(uri)
-    response_body_obj = JSON.parse(res.body)
+    weatherstack_response_hash = JSON.parse(res.body)
 
     # We have to do a check for response_body_obj['success'] != false because the weatherstack API returns a 200
     # but also includes a success value that needs to be considered
-    if res.is_a?(Net::HTTPSuccess) && response_body_obj['success'] != false
-      Forecast.new(JSON.parse(res.body))
+    if res.is_a?(Net::HTTPSuccess) && weatherstack_response_hash['success'] != false
+      Forecast.new(reformat_response_data(weatherstack_response_hash))
     else
       raise Exception.new("Error in retrieving forecast data")
     end
+  end
+
+
+  def reformat_response_data(weatherstack_response_hash)
+    current_weather = weatherstack_response_hash['current']
+    {
+      current_temperature: current_weather['temperature'],
+      weather_description: current_weather['weather_descriptions']&.first,
+      feelslike: current_weather['feelslike'],
+      weather_icons: current_weather["weather_icons"],
+      location_name: weatherstack_response_hash.dig("location","name"),
+      region: weatherstack_response_hash.dig("location","region"),
+      wind_speed: current_weather['wind_speed'],
+      wind_dir: current_weather['wind_dir']
+    }
   end
 end

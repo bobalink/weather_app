@@ -4,14 +4,15 @@ describe Forecast do
 
   let(:full_input_object) {
     {
-      "location" => { "name" => "Denver", "country" => "USA", "region" => "Colorado"},
-      "current" => { "temperature" => 63,
-                     "feelslike" => 64,
-                     "wind_speed" => 11,
-                      "wind_dir" => "NNW",
-                     "weather_icons" => ["https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"],
-                     "weather_descriptions" => ["Partly cloudy"] },
-    }
+      current_temperature: 63,
+      weather_description: "Partly cloudy",
+      feelslike: 64,
+      weather_icons: ["https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"],
+      location_name: "Denver",
+      region: "Colorado",
+      wind_speed: 11,
+      wind_dir: "NNW"}
+
   }
 
   let(:input_object_with_no_data) {
@@ -30,14 +31,14 @@ describe Forecast do
   describe 'initialize' do
     it 'assigns attributes based on input json returned from weatherstackapi' do
       forecast_obj = Forecast.new(full_input_object)
-      expect(forecast_obj.current_temperature).to eq full_input_object['current']['temperature']
-      expect(forecast_obj.weather_description).to eq full_input_object['current']['weather_descriptions'].first
-      expect(forecast_obj.feelslike).to eq full_input_object['current']['feelslike']
-      expect(forecast_obj.weather_icons).to eq full_input_object['current']['weather_icons']
-      expect(forecast_obj.wind_speed).to eq full_input_object['current']['wind_speed']
-      expect(forecast_obj.wind_dir).to eq full_input_object['current']['wind_dir']
-      expect(forecast_obj.location_name).to eq full_input_object['location']['name']
-      expect(forecast_obj.region).to eq full_input_object['location']['region']
+      expect(forecast_obj.current_temperature).to eq full_input_object[:current_temperature]
+      expect(forecast_obj.weather_description).to eq full_input_object[:weather_description]
+      expect(forecast_obj.feelslike).to eq full_input_object[:feelslike]
+      expect(forecast_obj.weather_icons).to eq full_input_object[:weather_icons]
+      expect(forecast_obj.wind_speed).to eq full_input_object[:wind_speed]
+      expect(forecast_obj.wind_dir).to eq full_input_object[:wind_dir]
+      expect(forecast_obj.location_name).to eq full_input_object[:location_name]
+      expect(forecast_obj.region).to eq full_input_object[:region]
     end
 
     it 'populates a value for all provided input fields on the input object' do
@@ -52,7 +53,7 @@ describe Forecast do
       expect(forecast_obj.region).to_not be_nil
     end
 
-    it 'does not populate null fields on the input object' do
+    it 'does not populate any null fields on the input object' do
       forecast_obj = Forecast.new(input_object_with_no_data)
       expect(forecast_obj.current_temperature).to be_nil
       expect(forecast_obj.weather_description).to be nil
