@@ -1,29 +1,27 @@
 # frozen_string_literal: true
 
 describe Forecast do
-
   let(:full_input_object) {
     {
       current_temperature: 63,
       weather_description: "Partly cloudy",
       feels_like: 64,
-      weather_icons: ["https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"],
+      weather_icons: [ "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png" ],
       location_name: "Denver",
       region: "Colorado",
       wind_speed: 11,
-      wind_dir: "NNW"}
-
+      wind_dir: "NNW" }
   }
 
   let(:input_object_with_no_data) {
     {
-      "location" => { "name" => nil, "country" => nil, "region" => nil},
+      "location" => { "name" => nil, "country" => nil, "region" => nil },
       "current" => { "temperature" => nil,
                      "wind_speed" => nil,
                      "wind_dir" => nil,
                      "feels_like" => nil,
                      "weather_icons" => nil,
-                     "weather_descriptions" => nil },
+                     "weather_descriptions" => nil }
     }
   }
 

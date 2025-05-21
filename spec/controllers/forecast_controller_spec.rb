@@ -1,10 +1,11 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 describe ForecastController, type: :controller do
   let(:weather_service_mock) { instance_double(ForecastService) }
   let(:mock_address_validator) { instance_double(MainStreet::AddressVerifier) }
-  let(:mock_address_validation_result) {}
+  let(:mock_address_validation_result) { }
   let(:mock_address_validation_result_data) {
     {
       "address" => {
@@ -18,14 +19,13 @@ describe ForecastController, type: :controller do
       {
         current: {
           temperature: '72',
-          weather_descriptions: ['Nice and Sunny']
+          weather_descriptions: [ 'Nice and Sunny' ]
         }
       }.with_indifferent_access
     )
   }
 
   describe "Forcast Controller" do
-
     # Allows Rails.cache to behave just like it would on dev and prod!
     let(:memory_store) { ActiveSupport::Cache.lookup_store(:memory_store) }
 

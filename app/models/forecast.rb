@@ -12,8 +12,8 @@ class Forecast
                 :wind_speed
 
   def initialize(attributes)
-    attributes.each do |k,v|
-      instance_variable_set("@#{k}",v) unless v.nil?
+    attributes.each do |k, v|
+      instance_variable_set("@#{k}", v) unless v.nil?
     end
   end
 end

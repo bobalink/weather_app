@@ -1,4 +1,4 @@
-require 'net/http'
+require "net/http"
 
 
 class ForecastController < ApplicationController
@@ -9,10 +9,10 @@ class ForecastController < ApplicationController
       verifier = MainStreet::AddressVerifier.new(query)
       # There are cases where you can provide just a city as an input and don't get a zip returned
       # With this in order to cache we need to validate there's a zip.
-      unless verifier.success? && verifier.result.data['address']['postcode']
+      unless verifier.success? && verifier.result.data["address"]["postcode"]
         raise Exception("Invalid address")
       end
-      verified_zip = verifier.result.data['address']['postcode']
+      verified_zip = verifier.result.data["address"]["postcode"]
     end
 
     if verified_zip

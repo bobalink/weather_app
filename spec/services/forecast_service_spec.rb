@@ -1,36 +1,34 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 describe ForecastService do
-
   let(:current_class) { ForecastService.new }
 
   let(:input_query) { '80211' }
   describe "get_forecast" do
-
     it 'calls the weatherstack api with the weatherstack api credentials, the query and units' do
       stub_request(:get, 'http://api.weatherstack.com/current')
-        .with(query: { access_key: Rails.application.credentials.weatherstack.api_key, query: input_query, units: 'f'})
+        .with(query: { access_key: Rails.application.credentials.weatherstack.api_key, query: input_query, units: 'f' })
         .to_return(status: 200, body: {
           current: {
             temperature: '72',
-            weather_descriptions: ['Nice and Sunny']
+            weather_descriptions: [ 'Nice and Sunny' ]
           }
         }.to_json)
 
-      #this test would fail if the stub wasn't correct
+      # this test would fail if the stub wasn't correct
       current_class.get_forecast(input_query)
     end
 
     context 'failed called to weatherstack' do
       it 'Raises an error' do
-
         stub_request(:get, 'http://api.weatherstack.com/current')
-          .with(query: { access_key: Rails.application.credentials.weatherstack.api_key, query: input_query, units: 'f'})
+          .with(query: { access_key: Rails.application.credentials.weatherstack.api_key, query: input_query, units: 'f' })
           .to_return(status: 400, body: {
             current: {
               temperature: '72',
-              weather_descriptions: ['Nice and Sunny']
+              weather_descriptions: [ 'Nice and Sunny' ]
             }
           }.to_json)
         expect { current_class.get_forecast(input_query) }.to raise_error(Exception)
@@ -41,25 +39,25 @@ describe ForecastService do
   describe 'reformat_response_data' do
     let(:full_input_object) {
       {
-        "location" => { "name" => "Denver", "country" => "USA", "region" => "Colorado"},
+        "location" => { "name" => "Denver", "country" => "USA", "region" => "Colorado" },
         "current" => { "temperature" => 63,
                        "feelslike" => 64,
                        "wind_speed" => 11,
                        "wind_dir" => "NNW",
-                       "weather_icons" => ["https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"],
-                       "weather_descriptions" => ["Partly cloudy"] },
+                       "weather_icons" => [ "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png" ],
+                       "weather_descriptions" => [ "Partly cloudy" ] }
       }
     }
 
     let(:input_object_with_no_data) {
       {
-        "location" => { "name" => nil, "country" => nil, "region" => nil},
+        "location" => { "name" => nil, "country" => nil, "region" => nil },
         "current" => { "temperature" => nil,
                        "wind_speed" => nil,
                        "wind_dir" => nil,
                        "feelslike" => nil,
                        "weather_icons" => nil,
-                       "weather_descriptions" => nil },
+                       "weather_descriptions" => nil }
       }
     }
 
