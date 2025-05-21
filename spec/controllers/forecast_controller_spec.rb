@@ -60,7 +60,6 @@ describe ForecastController, type: :controller do
 
       it 'should return the cached value if it exists' do
         get :index, params: { query: '80211' }
-        puts assigns(:weather).from_cache
         expect(assigns(:weather).from_cache).to eq false
 
         get :index, params: { query: '80211' }

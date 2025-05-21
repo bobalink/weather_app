@@ -1,36 +1,85 @@
-# README
+# Overview
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on rails app designed to take an address an input and return the current weather for that location. 
+It will cache results for a zip code for 30 minutes
 
-Things you may want to cover:
+## Data Sources:
+* Weather data: https://weatherstack.com/
+* Address validation: https://www.smarty.com/
 
-* Ruby version
+## Setup
+  ### Ruby Version
 
-* System dependencies
+- 3.4.2
 
-* Configuration
+I chose to use [rbenv](https://github.com/rbenv/rbenv) to handle the the ruby environment
 
-* Database creation
+`bundle install`
+`rails s`
 
-* Database initialization
+### Running tests
+  
+run `rspec` in the directory
 
-* How to run the test suite
+### Credentials 
+If you wanted to update the api keys for either weatherstack or smarty you would need to run 
 
-* Services (job queues, cache servers, search engines, etc.)
+`EDITOR="code --wait" rails credentials:edit` 
+and then edit the yaml to store your new credentials
 
-* Deployment instructions
+## Main files to review
 
-* ...
+### Controllers
+  - [Forecast Controller](app/controllers/forecast_controller.rb)
+  - [Forecast Controller tests](spec/controllers/forecast_controller_spec.rb)
+
+### Services 
+  - [Forecast_Service](app/services/forecast_service.rb)
+  - [Forecast Service Tests](spec/services/forecast_service_spec.rb)
+
+### Models
+  - [Forecast](app/models/forecast.rb)
 
 
+#### Forecast model fields
+  -  current_temperature (Integer): The current temperature of give address
+  -  from_cache (Boolean): an indicator of if the result was returned from cache
+  -  feels_like (Integer): What the current temperature for the given address feels like given wind and humidity
+  -  location_name (String): The name of the city of the provided address
+  -  region (String): The name of the State or Region of the provided address
+  -  weather_description (String): a description of the current weather of the address provided
+  -  weather_icons ([String]): an array of strings that are URLs to a weather icons
+  -  wind_dir(String): a string representing the wind direction at the provided address
+  -  wind_speed(Integer):  a representation of how fast the wind is blowing at the provided address in MPH
+  
 
+## Considerations
+### Credentials:
+I used Rails credentials in order to store the needed keys for the Weatherstack and Smarty. While this is not ideal
+as anyone that finds this repo could extract those credentials I went ahead with it for ease of use and because the
+user accounts for those websites are limited in the requests they can receive and I do not have any payment info on those
+accounts so the worst case scenario would be someone locks my account.
 
-Things Completed: 
-- Encrypt API key using Rails credentials
-- Add params to query
-- Cache based on query
-- 
+### Design considerations
+
+- In the forecast controller I chose to only use the validated zip rather than the full validated address to help limit the number of mocks needed to test it.
+  In a prod situation I would aim for the full address but given that we are returning the cached value of the zip anyway
+  it felt like a reasonable way to achieve results faster with minimal downsides
+
+## Potential next steps
+
+### Improve Error handling
+ Currently any error routes you to the default rails error page. Ideally we would be popping up some alert that provided 
+additional information on what the user could do to resolve the issue
+
+### Abstract Address Validation
+ Currently the address validation is currently in the forecast controller but ideally this would live in it's own service
+
+### Autofill address on frontend
+ 
+ Currently the address input is just a free text field. It would be beneficial to the user if there was an address autofill
+on the front end to reduce chances of bad input.
+
 
 
 
@@ -46,4 +95,7 @@ Things still to do:
     - Address autofill for the FE
     - Object factories for test
 - Work on stripping zip from input to cache based on that
+
+
+
 

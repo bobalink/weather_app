@@ -68,7 +68,7 @@ describe ForecastService do
       forecast_obj = current_class.reformat_response_data(full_input_object)
       expect(forecast_obj[:current_temperature]).to eq full_input_object['current']['temperature']
       expect(forecast_obj[:weather_description]).to eq full_input_object['current']['weather_descriptions'].first
-      expect(forecast_obj[:feelslike]).to eq full_input_object['current']['feelslike']
+      expect(forecast_obj[:feels_like]).to eq full_input_object['current']['feelslike']
       expect(forecast_obj[:weather_icons]).to eq full_input_object['current']['weather_icons']
       expect(forecast_obj[:wind_speed]).to eq full_input_object['current']['wind_speed']
       expect(forecast_obj[:wind_dir]).to eq full_input_object['current']['wind_dir']
@@ -80,7 +80,7 @@ describe ForecastService do
       forecast_obj = current_class.reformat_response_data(full_input_object)
       expect(forecast_obj[:current_temperature]).to_not be_nil
       expect(forecast_obj[:weather_description]).to_not be_nil
-      expect(forecast_obj[:feelslike]).to_not be_nil
+      expect(forecast_obj[:feels_like]).to_not be_nil
       expect(forecast_obj[:weather_icons]).to_not be_nil
       expect(forecast_obj[:wind_speed]).to_not be_nil
       expect(forecast_obj[:wind_dir]).to_not be_nil
@@ -92,7 +92,7 @@ describe ForecastService do
       forecast_obj = current_class.reformat_response_data(input_object_with_no_data)
       expect(forecast_obj[:current_temperature]).to be_nil
       expect(forecast_obj[:weather_description]).to be nil
-      expect(forecast_obj[:feelslike]).to be nil
+      expect(forecast_obj[:feels_like]).to be nil
       expect(forecast_obj[:weather_icons]).to be nil
       expect(forecast_obj[:wind_speed]).to be nil
       expect(forecast_obj[:wind_dir]).to be nil

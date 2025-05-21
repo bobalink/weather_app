@@ -3,7 +3,7 @@ class Forecast
 
   attr_accessor :current_temperature,
                 :from_cache,
-                :feelslike,
+                :feels_like,
                 :location_name,
                 :region,
                 :weather_description,

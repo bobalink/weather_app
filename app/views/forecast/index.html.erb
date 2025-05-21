@@ -22,8 +22,8 @@
       <p>Current Temperature: <%= @weather.current_temperature%></p>
       <p> <%= @weather.weather_description%></p>
       <p>Wind direction: <%=@weather.wind_dir%></p>
-      <p>Wind speed: <%=@weather.wind_speed%></p>
-      <p>Feels like: <%=@weather.feelslike%></p>
+      <p>Wind speed: <%=@weather.wind_speed%>Mph</p>
+      <p>Feels like: <%=@weather.feels_like%></p>
       <p>Data result from Cache: <%=@weather.from_cache%></p>
     <% end %>
   </div>

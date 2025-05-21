@@ -23,7 +23,8 @@ class ForecastService
     {
       current_temperature: current_weather['temperature'],
       weather_description: current_weather['weather_descriptions']&.first,
-      feelslike: current_weather['feelslike'],
+      # for whatever reason the weatherstack API returns feelslike rather than feels_like
+      feels_like: current_weather['feelslike'],
       weather_icons: current_weather["weather_icons"],
       location_name: weatherstack_response_hash.dig("location","name"),
       region: weatherstack_response_hash.dig("location","region"),
