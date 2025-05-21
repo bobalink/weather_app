@@ -22,10 +22,27 @@ I chose to use [rbenv](https://github.com/rbenv/rbenv) to handle the the ruby en
 run `rspec` in the directory
 
 ### Credentials 
-If you wanted to update the api keys for either weatherstack or smarty you would need to run 
+The API keys for the two different data sources are stored in `config/credentials.yml.enc` however that file is encrypted 
+with a master key. If you have the master key you can create a file `config/master.key` and include that master key there
+
+
+If you do not have a master key you'll need to create your own account at both [weatherstack](https://weatherstack.com/) 
+and [smartly](https://www.smarty.com/) and get the keys for both of them and then add them to your own credential file
+
+You can do this by running
 
 `EDITOR="code --wait" rails credentials:edit` 
+
 and then edit the yaml to store your new credentials
+
+it should look something like this when you are done
+
+     smarty:
+        auth_id: "<smarty_auth_id_here>"
+        auth_token: "<smarty_auth_token_here>"
+
+     weatherstack:
+        api_key: "<weatherstack_api_key_here>"
 
 ## Main files to review
 
@@ -54,12 +71,6 @@ and then edit the yaml to store your new credentials
   
 
 ## Considerations
-### Credentials:
-I used Rails credentials in order to store the needed keys for the Weatherstack and Smarty. While this is not ideal
-as anyone that finds this repo could extract those credentials I went ahead with it for ease of use and because the
-user accounts for those websites are limited in the requests they can receive and I do not have any payment info on those
-accounts so the worst case scenario would be someone locks my account.
-
 ### Design considerations
 
 - In the forecast controller I chose to only use the validated zip rather than the full validated address to help limit the number of mocks needed to test it.
