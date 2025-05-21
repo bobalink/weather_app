@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4620ea7-b5da-4453-91ca-d333a4473f92" name="Changes" comment="Updating Readme for better instruction on credentials">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a4620ea7-b5da-4453-91ca-d333a4473f92" name="Changes" comment="Adding Rubocop and linting" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -281,6 +279,7 @@
       <workItem from="1747434196032" duration="8570000" />
       <workItem from="1747678149910" duration="1089000" />
       <workItem from="1747679257168" duration="38078000" />
+      <workItem from="1747845894658" duration="300000" />
     </task>
     <task id="LOCAL-00001" summary="Getting call in place based on hardcoded zip code and displaying it on index page">
       <option name="closed" value="true" />
@@ -378,7 +377,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747844686776</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Adding Rubocop and linting">
+      <option name="closed" value="true" />
+      <created>1747846010824</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1747846010824</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +404,8 @@
     <MESSAGE value="setting up address validation" />
     <MESSAGE value="minor cleanup and updating the Readme" />
     <MESSAGE value="Updating Readme for better instruction on credentials" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating Readme for better instruction on credentials" />
+    <MESSAGE value="Adding Rubocop and linting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Rubocop and linting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
