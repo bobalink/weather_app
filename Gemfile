@@ -68,7 +68,7 @@ group :test do
   gem "webmock"
 end
 
-gem "css-zero", "~> 1.1"
+gem "css-zero", "~> 3.1"
 
 gem "timecop", "~> 0.9.10"
 gem "mainstreet"
